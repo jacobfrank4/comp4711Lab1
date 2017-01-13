@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
+Main entry point to the webapp
+Displays the students in an ordered list on the screen.
 -->
 <html>
     <head>
@@ -12,7 +11,10 @@ and open the template in the editor.
     <body>
         <?php
             include('Student.php');
+            
             $students = array();
+            
+            //Create first student
             $first = new Student();
             $first->surname = "Doe";
             $first->first_name = "John";
@@ -23,6 +25,7 @@ and open the template in the editor.
             $first->add_grade(55);
             $students['j123'] = $first;
             
+            //Create second student
             $second = new Student();
             $second->surname = "Einstein";
             $second->first_name = "Albert";
@@ -34,12 +37,12 @@ and open the template in the editor.
             $second->add_grade(50);
             $students['a456'] = $second;
             
+            //Sort students in the array
             ksort($students);
+            
+            //print each student to the screen
             foreach($students as $student)
-                echo $student->toString();
-            
-        //echo "Hello out there ... I live!!!"
-            
+                echo $student->toString();            
         ?>
     </body>
 </html>

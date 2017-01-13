@@ -37,6 +37,19 @@ Displays the students in an ordered list on the screen.
             $second->add_grade(50);
             $students['a456'] = $second;
             
+            //Create third student
+            $third = new Student();
+            $third->surname = "Frank";
+            $third->first_name = "Jacob";
+            $third->add_email('home','jacob@home.com');
+            $third->add_email('work','jacob@work.com');
+            $third->add_email('school','jacob@school.com');
+            $third->add_grade(95);
+            $third->add_grade(85);
+            $third->add_grade(79);
+            $third->add_grade(87);
+            $students['j456'] = $third;
+            
             //Sort students in the array
             ksort($students);
             
